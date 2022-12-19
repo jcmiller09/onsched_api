@@ -78,30 +78,30 @@ class SettingsForm extends ConfigFormBase {
    */
   public function validateForm(array &$form, FormStateInterface $form_state) {
 
-    if ($form_state->getValue('token_api_url_sandbox')) {
-      $form_state->setErrorByName('token_api_url_sandbox', $this->t('The value is not correct.'));
-    }
-    if ($form_state->getValue('token_api_url_live')) {
-      $form_state->setErrorByName('token_api_url_live', $this->t('The value is not correct.'));
-    }
-    if ($form_state->getValue('rest_api_url_sandbox')) {
-      $form_state->setErrorByName('rest_api_url_sandbox', $this->t('The value is not correct.'));
-    }
-    if ($form_state->getValue('rest_api_url_live')) {
-      $form_state->setErrorByName('rest_api_url_live', $this->t('The value is not correct.'));
-    }
-    if ($form_state->getValue('client_id_sandbox')) {
-      $form_state->setErrorByName('client_id_sandbox', $this->t('The value is not correct.'));
-    }
-    if ($form_state->getValue('client_id_live')) {
-      $form_state->setErrorByName('client_id_live', $this->t('The value is not correct.'));
-    }
-    if ($form_state->getValue('client_secret_1')) {
-      $form_state->setErrorByName('client_secret_1', $this->t('The value is not correct.'));
-    }
-    if ($form_state->getValue('client_secret_2')) {
-      $form_state->setErrorByName('client_secret_2', $this->t('The value is not correct.'));
-    }
+//    if ($form_state->getValue('token_api_url_sandbox')) {
+//      $form_state->setErrorByName('token_api_url_sandbox', $this->t('The value is not correct.'));
+//    }
+//    if ($form_state->getValue('token_api_url_live')) {
+//      $form_state->setErrorByName('token_api_url_live', $this->t('The value is not correct.'));
+//    }
+//    if ($form_state->getValue('rest_api_url_sandbox')) {
+//      $form_state->setErrorByName('rest_api_url_sandbox', $this->t('The value is not correct.'));
+//    }
+//    if ($form_state->getValue('rest_api_url_live')) {
+//      $form_state->setErrorByName('rest_api_url_live', $this->t('The value is not correct.'));
+//    }
+//    if ($form_state->getValue('client_id_sandbox')) {
+//      $form_state->setErrorByName('client_id_sandbox', $this->t('The value is not correct.'));
+//    }
+//    if ($form_state->getValue('client_id_live')) {
+//      $form_state->setErrorByName('client_id_live', $this->t('The value is not correct.'));
+//    }
+//    if ($form_state->getValue('client_secret_1')) {
+//      $form_state->setErrorByName('client_secret_1', $this->t('The value is not correct.'));
+//    }
+//    if ($form_state->getValue('client_secret_2')) {
+//      $form_state->setErrorByName('client_secret_2', $this->t('The value is not correct.'));
+//    }
     parent::validateForm($form, $form_state);
   }
 
@@ -110,10 +110,10 @@ class SettingsForm extends ConfigFormBase {
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $this->config('onsched_api.settings')
-      ->set('token_api_auth_url_sandbox', $form_state->getValue('token_api_auth_url_sandbox'))
-      ->set('token_api_auth_url_sandbox', $form_state->getValue('token_api_auth_url_sandbox'))
       ->set('token_api_url_sandbox', $form_state->getValue('token_api_url_sandbox'))
       ->set('token_api_url_live', $form_state->getValue('token_api_url_live'))
+      ->set('rest_api_url_sandbox', $form_state->getValue('rest_api_url_sandbox'))
+      ->set('rest_api_url_live', $form_state->getValue('rest_api_url_live'))
       ->set('client_id_sandbox', $form_state->getValue('client_id_sandbox'))
       ->set('client_id_live', $form_state->getValue('client_id_live'))
       ->set('client_secret_1', $form_state->getValue('client_secret_1'))
