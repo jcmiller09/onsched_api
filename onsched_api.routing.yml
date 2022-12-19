@@ -1,0 +1,15 @@
+onsched_api.appointment_browser:
+  path: '/onsched-api/browser'
+  defaults:
+    _title: 'Browse Appointments'
+    _controller: '\Drupal\onsched_api\Controller\OnSchedApiController::build'
+  requirements:
+    _permission: 'access content'
+
+onsched_api.settings_form:
+  path: '/admin/config/system/onsched-api'
+  defaults:
+    _title: 'OnSched API settings'
+    _form: 'Drupal\onsched_api\Form\SettingsForm'
+  requirements:
+    _permission: 'administer onsched_api configuration'

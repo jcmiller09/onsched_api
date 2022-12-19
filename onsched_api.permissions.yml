@@ -1,0 +1,4 @@
+administer onsched_api configuration:
+  title: 'Administer OnSched API configuration'
+  description: 'Optional description.'
+  restrict access: true

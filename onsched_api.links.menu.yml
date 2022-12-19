@@ -1,0 +1,6 @@
+onsched_api.settings_form:
+  title: 'OnSched API Settings'
+  description: 'Configure API credentials and URLs.'
+  parent: system.admin_config_system
+  route_name: onsched_api.settings_form
+  weight: 10

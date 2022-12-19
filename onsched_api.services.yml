@@ -1,0 +1,14 @@
+services:
+  onsched_api.event_subscriber:
+    class: Drupal\onsched_api\EventSubscriber\OnSchedApiSubscriber
+    arguments: ['@messenger']
+    tags:
+      - { name: event_subscriber }
+  onsched_api.onsched:
+    class: Drupal\onsched_api\OnSched
+    arguments: ['@messenger']
+    tags:
+      - { name: onsched }
+  onsched_api.onsched_middleware:
+    class: Drupal\onsched_api\Onsched
+    arguments: ['@http_client_middleware']

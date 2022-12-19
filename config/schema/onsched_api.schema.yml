@@ -1,0 +1,8 @@
+# Schema for the configuration files of the OnSched API module.
+onsched_api.settings:
+  type: config_object
+  label: 'OnSched API settings'
+  mapping:
+    example:
+      type: string
+      label: 'Example'
