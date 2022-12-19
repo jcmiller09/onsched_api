@@ -1,0 +1,29 @@
+<?php
+
+use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Field\BaseFieldDefinition;
+
+/**
+* Implements hook_entity_base_field_info().
+*/
+function onsched_api_entity_base_field_info(EntityTypeInterface $entity_type) {
+$fields = array();
+
+// Add a 'onsched' base field to users
+if ($entity_type->id() === 'user') {
+$fields['onsched_resource_id'] = BaseFieldDefinition::create('string')
+->setLabel(t('Resource ID'))
+->setDescription(t('The resource ID for a user in OnSched'))
+->setRevisionable(TRUE)
+->setTranslatable(TRUE)
+->setDisplayOptions('form', array(
+'type' => 'textfield',
+'settings' => array(
+'display_label' => TRUE,
+),
+))
+->setDisplayConfigurable('form', TRUE);
+}
+
+return $fields;
+}
